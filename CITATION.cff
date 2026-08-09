@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Se você utilizar este material, cite este repositório."
+title: "Jogo Textual: projeto-base didático de Lógica de Programação"
+type: software
+authors:
+  - family-names: "Dornbusch Lopes"
+    given-names: "Marcelo "
+repository-code: "https://github.com/m4rc3lo/jogo-textual"
+license: "Apache-2.0"

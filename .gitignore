@@ -1,0 +1,44 @@
+# .NET
+**/bin/
+**/obj/
+artifacts/
+TestResults/
+
+# Visual Studio / IDEs
+.vs/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/*
+!.vscode/.gitkeep
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# DocFX
+_site/
+**/_site/
+api/
+**/api/.manifest
+**/.cache/
+
+# Ruby
+.bundle/
+vendor/bundle/
+*.gem
+.ruby-version
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Temporários e logs
+*.tmp
+*.temp
+*.log
+*.bak
+*~

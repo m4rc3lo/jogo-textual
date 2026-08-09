@@ -1,0 +1,24 @@
+# Normalização de finais de linha
+* text=auto
+
+# Arquivos textuais do projeto
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.xml text eol=lf
+*.cs text eol=lf
+*.csproj text eol=lf
+*.sln text eol=crlf
+*.rb text eol=lf
+*.ps1 text eol=crlf
+*.sh text eol=lf
+
+# Arquivos binários
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
