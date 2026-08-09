@@ -1,0 +1,36 @@
+name: Integração contínua
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validar:
+    name: Compilar e testar
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Obter repositório
+        uses: actions/checkout@v7
+
+      - name: Configurar .NET 9
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: '9.0.x'
+
+      - name: Restaurar dependências
+        run: dotnet restore
+
+      - name: Compilar em Release
+        run: dotnet build --configuration Release --no-restore
+
+      - name: Executar testes em Release
+        run: dotnet test --configuration Release --no-build
