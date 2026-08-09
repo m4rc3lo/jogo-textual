@@ -16,22 +16,25 @@ O repositório será usado para desenvolver, de forma progressiva, um jogo textu
 
 ## Estado atual
 
-O repositório está no **Incremento 02 — solução .NET mínima**.
+O repositório está no **Incremento 03 — configuração didática do ambiente**.
 
-Nesta etapa, a solução possui somente:
+A solução possui:
 
 - uma aplicação Console em `src/JogoTextual`;
 - um projeto de testes xUnit em `tests/JogoTextual.Tests`;
-- uma mensagem mínima de execução;
-- um teste simples para verificar a infraestrutura de testes.
+- configuração mínima para Visual Studio Code;
+- convenções editoriais básicas;
+- um guia inicial de preparação do ambiente.
+
+O projeto usa `net9.0` como alvo para manter compatibilidade com o laboratório da disciplina. O `global.json` permite utilizar SDKs .NET 9 ou posteriores, incluindo .NET 10.
 
 Ainda não existe modelo de jogo: não há `Jogo`, `Jogador`, estados, ações, regras ou persistência.
 
-A solução utiliza o target framework `net10.0`. A versão exata do SDK será padronizada em uma etapa posterior.
+## Começando
 
-## Restaurar, compilar, testar e executar
+As instruções detalhadas para preparar o ambiente estão em [docs/getting-started.md](docs/getting-started.md).
 
-Na raiz do repositório:
+Na raiz do repositório, o fluxo básico é:
 
 ```powershell
 dotnet restore
