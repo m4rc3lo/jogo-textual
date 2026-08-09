@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JogoTextual", "src\JogoTextual\JogoTextual.csproj", "{9BF42C7C-74B8-4C55-8D51-3FC50F4F2647}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JogoTextual.Tests", "tests\JogoTextual.Tests\JogoTextual.Tests.csproj", "{DBEAD583-1A08-4D23-B8E3-2ECA73964635}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9BF42C7C-74B8-4C55-8D51-3FC50F4F2647}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BF42C7C-74B8-4C55-8D51-3FC50F4F2647}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BF42C7C-74B8-4C55-8D51-3FC50F4F2647}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BF42C7C-74B8-4C55-8D51-3FC50F4F2647}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBEAD583-1A08-4D23-B8E3-2ECA73964635}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBEAD583-1A08-4D23-B8E3-2ECA73964635}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBEAD583-1A08-4D23-B8E3-2ECA73964635}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBEAD583-1A08-4D23-B8E3-2ECA73964635}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
