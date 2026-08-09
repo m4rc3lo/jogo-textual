@@ -16,7 +16,7 @@ O repositório será usado para desenvolver, de forma progressiva, um jogo textu
 
 ## Estado atual
 
-O repositório está no **Incremento 03 — configuração didática do ambiente**.
+O repositório está no **Incremento 04 — integração contínua básica**.
 
 A solução possui:
 
@@ -24,7 +24,8 @@ A solução possui:
 - um projeto de testes xUnit em `tests/JogoTextual.Tests`;
 - configuração mínima para Visual Studio Code;
 - convenções editoriais básicas;
-- um guia inicial de preparação do ambiente.
+- um guia inicial de preparação do ambiente;
+- validação automática de compilação e testes com GitHub Actions.
 
 O projeto usa `net9.0` como alvo para manter compatibilidade com o laboratório da disciplina. O `global.json` permite utilizar SDKs .NET 9 ou posteriores, incluindo .NET 10.
 
@@ -48,6 +49,12 @@ A execução deve apresentar:
 ```text
 Projeto-base Jogo Textual configurado.
 ```
+
+## Integração contínua
+
+O workflow `.github/workflows/ci.yml` executa automaticamente a restauração das dependências, a compilação em configuração `Release` e os testes em todo `push` ou Pull Request direcionado à branch `main`.
+
+Nesta etapa, a automação serve apenas para **validar o projeto**. Ainda não há publicação de documentação ou GitHub Pages.
 
 ## Licença
 
