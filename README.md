@@ -16,9 +16,35 @@ O repositório será usado para desenvolver, de forma progressiva, um jogo textu
 
 ## Estado atual
 
-O repositório está no **Incremento 01 — bootstrap**. Nesta etapa são mantidos somente arquivos institucionais, documentação inicial e configurações básicas.
+O repositório está no **Incremento 02 — solução .NET mínima**.
 
-Ainda não há solução .NET, projeto C#, código de jogo, configuração do DocFX ou workflows funcionais.
+Nesta etapa, a solução possui somente:
+
+- uma aplicação Console em `src/JogoTextual`;
+- um projeto de testes xUnit em `tests/JogoTextual.Tests`;
+- uma mensagem mínima de execução;
+- um teste simples para verificar a infraestrutura de testes.
+
+Ainda não existe modelo de jogo: não há `Jogo`, `Jogador`, estados, ações, regras ou persistência.
+
+A solução utiliza o target framework `net10.0`. A versão exata do SDK será padronizada em uma etapa posterior.
+
+## Restaurar, compilar, testar e executar
+
+Na raiz do repositório:
+
+```powershell
+dotnet restore
+dotnet build
+dotnet test
+dotnet run --project src/JogoTextual
+```
+
+A execução deve apresentar:
+
+```text
+Projeto-base Jogo Textual configurado.
+```
 
 ## Licença
 
