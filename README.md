@@ -16,7 +16,7 @@ O repositório será usado para desenvolver, de forma progressiva, um jogo textu
 
 ## Estado atual
 
-O repositório está no **Incremento 05 — documentação local com DocFX**.
+O repositório está no **Incremento 06 — publicação automática da documentação**.
 
 A solução possui:
 
@@ -26,7 +26,8 @@ A solução possui:
 - convenções editoriais básicas;
 - um guia inicial de preparação do ambiente;
 - validação automática de compilação e testes com GitHub Actions;
-- documentação conceitual e de API gerada localmente com DocFX.
+- documentação conceitual e de API gerada com DocFX;
+- publicação automática da documentação no GitHub Pages.
 
 O projeto usa `net9.0` como alvo para manter compatibilidade com o laboratório da disciplina. O `global.json` permite utilizar SDKs .NET 9 ou posteriores, incluindo .NET 10.
 
@@ -55,7 +56,7 @@ Projeto-base Jogo Textual configurado.
 
 O workflow `.github/workflows/ci.yml` executa automaticamente a restauração das dependências, a compilação em configuração `Release` e os testes em todo `push` ou Pull Request direcionado à branch `main`.
 
-Nesta etapa, a automação serve apenas para **validar o projeto**. Ainda não há publicação de documentação ou GitHub Pages.
+O workflow de CI continua responsável pela validação de build e testes. A publicação da documentação é realizada separadamente pelo workflow `.github/workflows/pages.yml`.
 
 ## Gerando a documentação localmente
 
@@ -77,7 +78,15 @@ Os arquivos resultantes são gravados em `_site/`. Para visualizar o site em um 
 dotnet tool run docfx docfx.json --serve
 ```
 
-O site combina a documentação conceitual escrita em Markdown com a documentação da API C# gerada pelo DocFX. Nesta etapa, a documentação é apenas local; sua publicação automática será configurada posteriormente.
+O site combina a documentação conceitual escrita em Markdown com a documentação da API C# gerada pelo DocFX.
+
+## Publicação da documentação
+
+O workflow `.github/workflows/pages.yml` é executado em todo `push` para `main` ou manualmente pela aba Actions. Antes de publicar, ele restaura as dependências, compila, executa os testes, restaura o DocFX e gera `_site/`.
+
+Somente o conteúdo de `_site/` é enviado como artefato para o GitHub Pages.
+
+Para a primeira publicação, o repositório deve estar configurado em **Settings → Pages → Build and deployment → Source → GitHub Actions**. Depois dessa configuração, novas alterações em `main` publicam automaticamente a documentação quando o workflow termina com sucesso.
 
 ## Licença
 
