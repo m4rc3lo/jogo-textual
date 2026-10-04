@@ -16,7 +16,7 @@ O repositório será usado para desenvolver, de forma progressiva, um jogo textu
 
 ## Estado atual
 
-O repositório está no **Incremento 04 — integração contínua básica**.
+O repositório está no **Incremento 05 — documentação local com DocFX**.
 
 A solução possui:
 
@@ -25,7 +25,8 @@ A solução possui:
 - configuração mínima para Visual Studio Code;
 - convenções editoriais básicas;
 - um guia inicial de preparação do ambiente;
-- validação automática de compilação e testes com GitHub Actions.
+- validação automática de compilação e testes com GitHub Actions;
+- documentação conceitual e de API gerada localmente com DocFX.
 
 O projeto usa `net9.0` como alvo para manter compatibilidade com o laboratório da disciplina. O `global.json` permite utilizar SDKs .NET 9 ou posteriores, incluindo .NET 10.
 
@@ -55,6 +56,28 @@ Projeto-base Jogo Textual configurado.
 O workflow `.github/workflows/ci.yml` executa automaticamente a restauração das dependências, a compilação em configuração `Release` e os testes em todo `push` ou Pull Request direcionado à branch `main`.
 
 Nesta etapa, a automação serve apenas para **validar o projeto**. Ainda não há publicação de documentação ou GitHub Pages.
+
+## Gerando a documentação localmente
+
+O DocFX é registrado como uma ferramenta local do repositório. Na primeira utilização, restaure a ferramenta:
+
+```powershell
+dotnet tool restore
+```
+
+Depois gere o site estático:
+
+```powershell
+dotnet tool run docfx docfx.json
+```
+
+Os arquivos resultantes são gravados em `_site/`. Para visualizar o site em um servidor local:
+
+```powershell
+dotnet tool run docfx docfx.json --serve
+```
+
+O site combina a documentação conceitual escrita em Markdown com a documentação da API C# gerada pelo DocFX. Nesta etapa, a documentação é apenas local; sua publicação automática será configurada posteriormente.
 
 ## Licença
 
