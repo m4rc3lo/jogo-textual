@@ -8,5 +8,7 @@
   href: docs/dominio-minimo.md
 - name: Ciclo principal
   href: docs/ciclo-principal.md
+- name: Console e entrada
+  href: docs/interface-console.md
 - name: API
   href: api/

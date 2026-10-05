@@ -8,38 +8,39 @@ namespace JogoTextual
     public class Jogo
     {
         private readonly EstadoJogo estado = new EstadoJogo();
+        private readonly InterfaceConsole interfaceConsole = new InterfaceConsole();
+
+        private readonly List<AcaoJogo> acoes = new List<AcaoJogo>
+        {
+            new AcaoJogo("1", "Avançar um turno"),
+            new AcaoJogo("0", "Encerrar o jogo")
+        };
 
         /// <summary>
         /// Executa ciclos sucessivos até que o estado seja encerrado.
         /// </summary>
         public void Executar()
         {
-            Console.WriteLine("Jogo Textual");
-            Console.WriteLine("Use 1 para avançar um turno ou 0 para encerrar.");
+            interfaceConsole.ExibirMensagem("Jogo Textual");
 
             while (!estado.Encerrado)
             {
-                Console.WriteLine();
-                Console.WriteLine($"Turno atual: {estado.Turno}");
-                Console.Write("Ação: ");
+                interfaceConsole.ExibirEstado(estado);
+                interfaceConsole.ExibirAcoes(acoes);
 
-                string? entrada = Console.ReadLine();
+                string codigoAcao = interfaceConsole.LerOpcaoValida(acoes);
 
-                if (entrada == "1")
+                if (codigoAcao == "1")
                 {
                     estado.AvancarTurno();
                 }
-                else if (entrada == "0")
+                else if (codigoAcao == "0")
                 {
                     estado.Encerrar();
                 }
-                else
-                {
-                    Console.WriteLine("Opção inválida.");
-                }
             }
 
-            Console.WriteLine("Jogo encerrado.");
+            interfaceConsole.ExibirMensagem("Jogo encerrado.");
         }
     }
 }
