@@ -14,5 +14,7 @@
   href: docs/regras-consequencias.md
 - name: Coleção e histórico
   href: docs/colecao-historico.md
+- name: Persistência JSON
+  href: docs/persistencia-json.md
 - name: API
   href: api/

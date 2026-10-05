@@ -1,11 +1,12 @@
+using System.Text.Json.Serialization;
+
 namespace JogoTextual.Dominio
 {
-    /// <summary>
-    /// Registra um acontecimento associado a um turno da partida.
-    /// </summary>
+    /// <summary>Registra um acontecimento associado a um turno da partida.</summary>
     public class RegistroJogo
     {
         /// <summary>Inicializa um registro.</summary>
+        [JsonConstructor]
         public RegistroJogo(int turno, string descricao)
         {
             Turno = turno;

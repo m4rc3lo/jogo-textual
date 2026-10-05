@@ -1,20 +1,24 @@
+using System.Text.Json.Serialization;
+
 namespace JogoTextual.Dominio
 {
-    /// <summary>
-    /// Representa informações mutáveis que descrevem a situação atual do jogo.
-    /// </summary>
+    /// <summary>Representa informações mutáveis que descrevem a situação atual do jogo.</summary>
     public class EstadoJogo
     {
         /// <summary>Obtém o número do turno atual.</summary>
+        [JsonInclude]
         public int Turno { get; private set; } = 1;
 
         /// <summary>Obtém o progresso acumulado durante a partida.</summary>
+        [JsonInclude]
         public int Progresso { get; private set; }
 
         /// <summary>Obtém um valor que indica se a execução foi encerrada.</summary>
+        [JsonInclude]
         public bool Encerrado { get; private set; }
 
         /// <summary>Obtém o histórico de acontecimentos da partida.</summary>
+        [JsonInclude]
         public List<RegistroJogo> Historico { get; private set; } = new List<RegistroJogo>();
 
         /// <summary>Avança a contagem para o próximo turno.</summary>
@@ -27,9 +31,6 @@ namespace JogoTextual.Dominio
         public void Encerrar() => Encerrado = true;
 
         /// <summary>Adiciona uma descrição ao histórico usando o turno atual.</summary>
-        public void Registrar(string descricao)
-        {
-            Historico.Add(new RegistroJogo(Turno, descricao));
-        }
+        public void Registrar(string descricao) => Historico.Add(new RegistroJogo(Turno, descricao));
     }
 }
