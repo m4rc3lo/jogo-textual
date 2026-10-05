@@ -12,5 +12,7 @@
   href: docs/interface-console.md
 - name: Regras e consequências
   href: docs/regras-consequencias.md
+- name: Coleção e histórico
+  href: docs/colecao-historico.md
 - name: API
   href: api/

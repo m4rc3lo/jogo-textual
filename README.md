@@ -16,7 +16,7 @@ O repositório será usado para desenvolver, de forma progressiva, um jogo textu
 
 ## Estado atual
 
-O repositório está no **Incremento 11 — ações, regras e consequências**.
+O repositório está no **Incremento 12 — coleção significativa e histórico**.
 
 A solução possui:
 
@@ -32,7 +32,8 @@ A solução possui:
 - os primeiros tipos de domínio: `EstadoJogo` e `AcaoJogo`;
 - a classe `Jogo`, responsável por coordenar o ciclo principal;
 - `InterfaceConsole`, responsável pela entrada, saída e validação das escolhas;
-- `RegrasJogo`, que transforma ações em consequências explícitas sobre o estado.
+- `RegrasJogo`, que transforma ações em consequências explícitas sobre o estado;
+- um histórico de `RegistroJogo`, usado como coleção significativa da partida.
 
 O projeto usa `net9.0` como alvo para manter compatibilidade com o laboratório da disciplina. O `global.json` permite utilizar SDKs .NET 9 ou posteriores, incluindo .NET 10.
 
