@@ -16,7 +16,7 @@ O repositório será usado para desenvolver, de forma progressiva, um jogo textu
 
 ## Estado atual
 
-O repositório está no **Incremento 10 — interface de console e validação de entrada**.
+O repositório está no **Incremento 11 — ações, regras e consequências**.
 
 A solução possui:
 
@@ -31,11 +31,12 @@ A solução possui:
 - um guia de estudo para orientar leitura, execução, modificação e teste do projeto;
 - os primeiros tipos de domínio: `EstadoJogo` e `AcaoJogo`;
 - a classe `Jogo`, responsável por coordenar o ciclo principal;
-- `InterfaceConsole`, responsável pela entrada, saída e validação das escolhas.
+- `InterfaceConsole`, responsável pela entrada, saída e validação das escolhas;
+- `RegrasJogo`, que transforma ações em consequências explícitas sobre o estado.
 
 O projeto usa `net9.0` como alvo para manter compatibilidade com o laboratório da disciplina. O `global.json` permite utilizar SDKs .NET 9 ou posteriores, incluindo .NET 10.
 
-O projeto já possui um ciclo principal mínimo e executável, com entrada e saída separadas em `InterfaceConsole`. As ações ainda são elementares; regras específicas e persistência continuam fora do escopo atual.
+O projeto já possui regras demonstrativas e um valor de `Progresso`, mantendo o domínio propositalmente genérico. Persistência ainda está fora do escopo atual.
 
 ## Começando
 

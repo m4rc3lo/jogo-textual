@@ -10,5 +10,7 @@
   href: docs/ciclo-principal.md
 - name: Console e entrada
   href: docs/interface-console.md
+- name: Regras e consequências
+  href: docs/regras-consequencias.md
 - name: API
   href: api/

@@ -9,16 +9,16 @@ namespace JogoTextual
     {
         private readonly EstadoJogo estado = new EstadoJogo();
         private readonly InterfaceConsole interfaceConsole = new InterfaceConsole();
+        private readonly RegrasJogo regras = new RegrasJogo();
 
         private readonly List<AcaoJogo> acoes = new List<AcaoJogo>
         {
-            new AcaoJogo("1", "Avançar um turno"),
+            new AcaoJogo("1", "Progredir"),
+            new AcaoJogo("2", "Aguardar"),
             new AcaoJogo("0", "Encerrar o jogo")
         };
 
-        /// <summary>
-        /// Executa ciclos sucessivos até que o estado seja encerrado.
-        /// </summary>
+        /// <summary>Executa ciclos sucessivos até que o estado seja encerrado.</summary>
         public void Executar()
         {
             interfaceConsole.ExibirMensagem("Jogo Textual");
@@ -27,17 +27,8 @@ namespace JogoTextual
             {
                 interfaceConsole.ExibirEstado(estado);
                 interfaceConsole.ExibirAcoes(acoes);
-
                 string codigoAcao = interfaceConsole.LerOpcaoValida(acoes);
-
-                if (codigoAcao == "1")
-                {
-                    estado.AvancarTurno();
-                }
-                else if (codigoAcao == "0")
-                {
-                    estado.Encerrar();
-                }
+                regras.Aplicar(codigoAcao, estado);
             }
 
             interfaceConsole.ExibirMensagem("Jogo encerrado.");

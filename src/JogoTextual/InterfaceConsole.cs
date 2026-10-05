@@ -24,6 +24,7 @@ namespace JogoTextual
         {
             Console.WriteLine();
             Console.WriteLine($"Turno atual: {estado.Turno}");
+            Console.WriteLine($"Progresso: {estado.Progresso}");
         }
 
         /// <summary>
