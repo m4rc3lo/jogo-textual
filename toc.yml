@@ -18,5 +18,7 @@
   href: docs/persistencia-json.md
 - name: Testes
   href: docs/testes.md
+- name: Adaptando o projeto
+  href: docs/adaptacao-projeto.md
 - name: API
   href: api/

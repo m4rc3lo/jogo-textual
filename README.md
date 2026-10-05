@@ -16,7 +16,7 @@ O repositório será usado para desenvolver, de forma progressiva, um jogo textu
 
 ## Estado atual
 
-O repositório está no **Incremento 14 — testes das regras e persistência**.
+O repositório está no **Incremento 15 — guia de adaptação do projeto**.
 
 A solução possui:
 
@@ -35,7 +35,8 @@ A solução possui:
 - `RegrasJogo`, que transforma ações em consequências explícitas sobre o estado;
 - um histórico de `RegistroJogo`, usado como coleção significativa da partida;
 - persistência local do estado em JSON por meio de `PersistenciaJogo`;
-- testes automatizados das regras, do histórico e da persistência.
+- testes automatizados das regras, do histórico e da persistência;
+- um guia para adaptar o projeto-base sem reduzir a atividade à troca de textos.
 
 O projeto usa `net9.0` como alvo para manter compatibilidade com o laboratório da disciplina. O `global.json` permite utilizar SDKs .NET 9 ou posteriores, incluindo .NET 10.
 
