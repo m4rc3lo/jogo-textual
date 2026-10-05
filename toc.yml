@@ -16,5 +16,7 @@
   href: docs/colecao-historico.md
 - name: Persistência JSON
   href: docs/persistencia-json.md
+- name: Testes
+  href: docs/testes.md
 - name: API
   href: api/
