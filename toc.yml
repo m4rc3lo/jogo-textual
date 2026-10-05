@@ -22,5 +22,7 @@
   href: docs/adaptacao-projeto.md
 - name: Uso de IA generativa
   href: docs/uso-ia-generativa.md
+- name: Arquitetura atual
+  href: docs/arquitetura.md
 - name: API
   href: api/

@@ -16,7 +16,7 @@ O repositório será usado para desenvolver, de forma progressiva, um jogo textu
 
 ## Estado atual
 
-O repositório está no **Incremento 16 — diretrizes de uso de IA generativa**.
+O repositório está no **Incremento 18 — arquitetura e documentação consolidadas**.
 
 A solução possui:
 
@@ -37,7 +37,8 @@ A solução possui:
 - persistência local do estado em JSON por meio de `PersistenciaJogo`;
 - testes automatizados das regras, do histórico e da persistência;
 - um guia para adaptar o projeto-base sem reduzir a atividade à troca de textos;
-- diretrizes públicas para uso transparente e responsável de IA generativa.
+- diretrizes públicas para uso transparente e responsável de IA generativa;
+- documentação da arquitetura atual com diagramas Mermaid.
 
 O projeto usa `net9.0` como alvo para manter compatibilidade com o laboratório da disciplina. O `global.json` permite utilizar SDKs .NET 9 ou posteriores, incluindo .NET 10.
 

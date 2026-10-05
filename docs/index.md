@@ -2,26 +2,32 @@
 
 Este site reúne a documentação do projeto-base utilizado na disciplina de **Lógica de Programação** do curso de **Design de Games**.
 
-O projeto tem natureza didática. Ele será desenvolvido de forma incremental para tornar visíveis conceitos de programação que serão usados posteriormente na construção de um jogo textual em C#/.NET. A prioridade é manter o código e sua organização compreensíveis para estudantes que estão iniciando seus estudos de programação.
+O projeto tem natureza didática. Ele evolui de forma incremental para tornar visíveis conceitos de programação usados na construção de um jogo textual em C#/.NET. A prioridade é manter código, regras e documentação compreensíveis para estudantes em uma disciplina introdutória.
 
-## Como a documentação está organizada
+## Como usar a documentação
 
-A documentação está dividida inicialmente em três pontos de entrada:
+A navegação acompanha a evolução do próprio projeto. É possível começar pela preparação do ambiente e pelo guia de estudo, avançar pelos conceitos implementados no código e consultar depois o guia de adaptação e a arquitetura consolidada.
 
-- **Início**: apresenta a finalidade e o contexto do projeto;
-- **Começando**: explica como preparar o ambiente, compilar, testar e executar a solução;
-- **API**: apresenta a documentação gerada a partir do código C# e de seus comentários XML.
+A seção **API** é gerada automaticamente a partir do código C# e dos comentários XML.
 
-Ainda não há documentação de arquitetura, estados, ações ou regras do jogo porque esses elementos ainda não foram implementados. Eles serão acrescentados conforme o código-base evoluir.
+## Conteúdo conceitual e API
 
-## Documentação conceitual e documentação da API
+Os arquivos Markdown em `docs/` explicam conceitos, responsabilidades e procedimentos. A documentação da API descreve tipos e membros públicos existentes no código.
 
-Os arquivos Markdown em `docs/` formam a documentação conceitual. Eles explicam o projeto em linguagem voltada ao estudo.
+Essas fontes são complementares: os textos explicam **por que** e **como** os elementos são usados; a API mostra **o que existe** no código.
 
-A documentação da API é produzida automaticamente pelo DocFX a partir do projeto C#. Ela ajuda a localizar namespaces, classes e membros públicos e, quando presentes, exibe também os comentários XML escritos no código.
+## Arquitetura atual
 
-Esses dois tipos de documentação são complementares: a documentação conceitual explica o contexto e as decisões; a documentação da API descreve os elementos existentes no código.
+O projeto já possui estado, ações, regras, histórico, interação por console, persistência e testes. A página **Arquitetura atual** reúne essas relações e inclui diagramas Mermaid produzidos a partir da implementação existente.
+
+A arquitetura continua propositalmente pequena. O objetivo é favorecer leitura, modificação e experimentação, e não antecipar estruturas de software que a disciplina ainda não exige.
+
+## Adaptação pelos grupos
+
+O projeto-base não define um gênero de jogo. Os exemplos de `Progresso`, ações e regras são demonstrativos e devem ser substituídos ou ampliados quando não forem adequados à proposta desenvolvida.
+
+Consulte **Adaptando o projeto** antes de iniciar mudanças maiores.
 
 ## Diagramas Mermaid
 
-O site utiliza o template `modern` do DocFX. Esse template oferece suporte a blocos Mermaid em arquivos Markdown. Diagramas serão adicionados somente quando houver um conceito real do projeto que se beneficie de uma representação visual; não são necessários diagramas artificiais nesta etapa.
+O site utiliza o template `modern` do DocFX, que permite incorporar diagramas Mermaid diretamente nos documentos Markdown. Os diagramas são usados quando ajudam a explicar relações reais do projeto.
