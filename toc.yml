@@ -2,5 +2,7 @@
   href: docs/index.md
 - name: Começando
   href: docs/getting-started.md
+- name: Como estudar
+  href: docs/how-to-study.md
 - name: API
   href: api/

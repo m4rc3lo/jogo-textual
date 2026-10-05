@@ -24,8 +24,8 @@
       },
       {
         "files": [
-          "index.md",
-          "getting-started.md"
+          "**.md",
+          "toc.yml"
         ],
         "src": "docs"
       },

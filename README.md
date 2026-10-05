@@ -16,7 +16,7 @@ O repositório será usado para desenvolver, de forma progressiva, um jogo textu
 
 ## Estado atual
 
-O repositório está no **Incremento 06 — publicação automática da documentação**.
+O repositório está no **Incremento 07 — guia de estudo e uso do projeto**.
 
 A solução possui:
 
@@ -27,7 +27,8 @@ A solução possui:
 - um guia inicial de preparação do ambiente;
 - validação automática de compilação e testes com GitHub Actions;
 - documentação conceitual e de API gerada com DocFX;
-- publicação automática da documentação no GitHub Pages.
+- publicação automática da documentação no GitHub Pages;
+- um guia de estudo para orientar leitura, execução, modificação e teste do projeto.
 
 O projeto usa `net9.0` como alvo para manter compatibilidade com o laboratório da disciplina. O `global.json` permite utilizar SDKs .NET 9 ou posteriores, incluindo .NET 10.
 
@@ -35,7 +36,7 @@ Ainda não existe modelo de jogo: não há `Jogo`, `Jogador`, estados, ações, 
 
 ## Começando
 
-As instruções detalhadas para preparar o ambiente estão em [docs/getting-started.md](docs/getting-started.md).
+As instruções detalhadas para preparar o ambiente estão em [docs/getting-started.md](docs/getting-started.md). Para orientar o estudo incremental do código, consulte também [docs/how-to-study.md](docs/how-to-study.md).
 
 Na raiz do repositório, o fluxo básico é:
 
