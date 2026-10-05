@@ -16,7 +16,7 @@ O repositório será usado para desenvolver, de forma progressiva, um jogo textu
 
 ## Estado atual
 
-O repositório está no **Incremento 07 — guia de estudo e uso do projeto**.
+O repositório está no **Incremento 08 — domínio mínimo do jogo**.
 
 A solução possui:
 
@@ -28,11 +28,12 @@ A solução possui:
 - validação automática de compilação e testes com GitHub Actions;
 - documentação conceitual e de API gerada com DocFX;
 - publicação automática da documentação no GitHub Pages;
-- um guia de estudo para orientar leitura, execução, modificação e teste do projeto.
+- um guia de estudo para orientar leitura, execução, modificação e teste do projeto;
+- os primeiros tipos de domínio: `EstadoJogo` e `AcaoJogo`.
 
 O projeto usa `net9.0` como alvo para manter compatibilidade com o laboratório da disciplina. O `global.json` permite utilizar SDKs .NET 9 ou posteriores, incluindo .NET 10.
 
-Ainda não existe modelo de jogo: não há `Jogo`, `Jogador`, estados, ações, regras ou persistência.
+O domínio inicial contém apenas estado e representação de ações. Ainda não existe a classe coordenadora `Jogo`, nem regras específicas, persistência ou estruturas associadas a um gênero.
 
 ## Começando
 
