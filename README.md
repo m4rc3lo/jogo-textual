@@ -16,7 +16,7 @@ O repositório será usado para desenvolver, de forma progressiva, um jogo textu
 
 ## Estado atual
 
-O repositório está no **Incremento 08 — domínio mínimo do jogo**.
+O repositório está no **Incremento 09 — ciclo principal do jogo**.
 
 A solução possui:
 
@@ -29,11 +29,12 @@ A solução possui:
 - documentação conceitual e de API gerada com DocFX;
 - publicação automática da documentação no GitHub Pages;
 - um guia de estudo para orientar leitura, execução, modificação e teste do projeto;
-- os primeiros tipos de domínio: `EstadoJogo` e `AcaoJogo`.
+- os primeiros tipos de domínio: `EstadoJogo` e `AcaoJogo`;
+- a classe `Jogo`, responsável por coordenar o ciclo principal.
 
 O projeto usa `net9.0` como alvo para manter compatibilidade com o laboratório da disciplina. O `global.json` permite utilizar SDKs .NET 9 ou posteriores, incluindo .NET 10.
 
-O domínio inicial contém apenas estado e representação de ações. Ainda não existe a classe coordenadora `Jogo`, nem regras específicas, persistência ou estruturas associadas a um gênero.
+O projeto já possui um ciclo principal mínimo e executável. As ações ainda são elementares e a interação com o console será separada no próximo incremento; regras específicas e persistência continuam fora do escopo atual.
 
 ## Começando
 
@@ -48,11 +49,7 @@ dotnet test
 dotnet run --project src/JogoTextual
 ```
 
-A execução deve apresentar:
-
-```text
-Projeto-base Jogo Textual configurado.
-```
+A execução inicia um ciclo interativo. Use `1` para avançar um turno e `0` para encerrar.
 
 ## Integração contínua
 

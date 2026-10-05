@@ -1,3 +1,5 @@
+using JogoTextual;
+
 namespace Main
 {
     /// <summary>
@@ -6,11 +8,12 @@ namespace Main
     public static class Program
     {
         /// <summary>
-        /// Inicia a execução da aplicação.
+        /// Cria o jogo e inicia seu ciclo principal.
         /// </summary>
         public static void Main()
         {
-            Console.WriteLine("Projeto-base Jogo Textual configurado.");
+            Jogo jogo = new Jogo();
+            jogo.Executar();
         }
     }
 }
