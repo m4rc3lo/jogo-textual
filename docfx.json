@@ -24,8 +24,7 @@
       },
       {
         "files": [
-          "**.md",
-          "toc.yml"
+          "**.md"
         ],
         "src": "docs"
       },
