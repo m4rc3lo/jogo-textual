@@ -20,5 +20,7 @@
   href: docs/testes.md
 - name: Adaptando o projeto
   href: docs/adaptacao-projeto.md
+- name: Uso de IA generativa
+  href: docs/uso-ia-generativa.md
 - name: API
   href: api/
