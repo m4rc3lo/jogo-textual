@@ -1,54 +1,18 @@
 # Jogo Textual
 
-Projeto-base didático em construção para a disciplina de **Lógica de Programação**, oferecida no curso de **Design de Games**.
+Projeto-base didático da disciplina de **Lógica de Programação** do curso de **Design de Games**.
 
-O repositório será usado para desenvolver, de forma progressiva, um jogo textual executado em terminal ou console. O objetivo é apoiar o estudo de lógica, estados, ações, regras, organização de código, testes e documentação sem introduzir complexidade desnecessária para uma disciplina introdutória.
+O projeto apresenta um jogo textual em C#/.NET com estado, ações, regras, ciclo principal, coleção de objetos, persistência em JSON e testes automatizados. A implementação é propositalmente pequena: o objetivo é servir como base de estudo e adaptação, e não como um jogo completo.
 
-## Tecnologias previstas
+## Para começar
 
-- C# e .NET;
-- xUnit;
-- DocFX;
-- Markdown e Mermaid;
-- GitHub Actions;
-- GitHub Pages;
-- Ruby para eventuais scripts auxiliares.
+Requisitos principais:
 
-## Estado atual
+- SDK .NET 9 ou posterior;
+- terminal PowerShell no Windows;
+- Visual Studio Code com suporte a C#.
 
-O repositório está no **Incremento 18 — arquitetura e documentação consolidadas**.
-
-A solução possui:
-
-- uma aplicação Console em `src/JogoTextual`;
-- um projeto de testes xUnit em `tests/JogoTextual.Tests`;
-- configuração mínima para Visual Studio Code;
-- convenções editoriais básicas;
-- um guia inicial de preparação do ambiente;
-- validação automática de compilação e testes com GitHub Actions;
-- documentação conceitual e de API gerada com DocFX;
-- publicação automática da documentação no GitHub Pages;
-- um guia de estudo para orientar leitura, execução, modificação e teste do projeto;
-- os primeiros tipos de domínio: `EstadoJogo` e `AcaoJogo`;
-- a classe `Jogo`, responsável por coordenar o ciclo principal;
-- `InterfaceConsole`, responsável pela entrada, saída e validação das escolhas;
-- `RegrasJogo`, que transforma ações em consequências explícitas sobre o estado;
-- um histórico de `RegistroJogo`, usado como coleção significativa da partida;
-- persistência local do estado em JSON por meio de `PersistenciaJogo`;
-- testes automatizados das regras, do histórico e da persistência;
-- um guia para adaptar o projeto-base sem reduzir a atividade à troca de textos;
-- diretrizes públicas para uso transparente e responsável de IA generativa;
-- documentação da arquitetura atual com diagramas Mermaid.
-
-O projeto usa `net9.0` como alvo para manter compatibilidade com o laboratório da disciplina. O `global.json` permite utilizar SDKs .NET 9 ou posteriores, incluindo .NET 10.
-
-O projeto já possui regras demonstrativas e um valor de `Progresso`, mantendo o domínio propositalmente genérico. O estado pode ser salvo e carregado localmente em JSON.
-
-## Começando
-
-As instruções detalhadas para preparar o ambiente estão em [docs/getting-started.md](docs/getting-started.md). Para orientar o estudo incremental do código, consulte também [docs/how-to-study.md](docs/how-to-study.md).
-
-Na raiz do repositório, o fluxo básico é:
+Na raiz do repositório:
 
 ```powershell
 dotnet restore
@@ -57,44 +21,114 @@ dotnet test
 dotnet run --project src/JogoTextual
 ```
 
-A execução inicia um ciclo interativo. Use `1` para avançar um turno e `0` para encerrar.
+Durante a execução, as ações demonstrativas permitem progredir, aguardar, salvar, carregar e encerrar a partida.
 
-## Integração contínua
+Para a preparação detalhada do ambiente, consulte [Começando](docs/getting-started.md).
 
-O workflow `.github/workflows/ci.yml` executa automaticamente a restauração das dependências, a compilação em configuração `Release` e os testes em todo `push` ou Pull Request direcionado à branch `main`.
+## Estude antes de adaptar
 
-O workflow de CI continua responsável pela validação de build e testes. A publicação da documentação é realizada separadamente pelo workflow `.github/workflows/pages.yml`.
+A sequência recomendada é:
 
-## Gerando a documentação localmente
+1. execute o projeto sem alterações;
+2. leia `Program.cs` e acompanhe a criação de `Jogo`;
+3. identifique onde ficam estado, ações, regras, interface e persistência;
+4. execute os testes;
+5. consulte a documentação da arquitetura;
+6. somente depois adapte o projeto à proposta do grupo.
 
-O DocFX é registrado como uma ferramenta local do repositório. Na primeira utilização, restaure a ferramenta:
+O guia [Como estudar com este projeto](docs/how-to-study.md) detalha esse processo.
+
+## Estrutura principal
+
+```text
+src/JogoTextual/
+├── Program.cs
+├── Jogo.cs
+├── InterfaceConsole.cs
+├── RegrasJogo.cs
+├── PersistenciaJogo.cs
+└── Dominio/
+    ├── AcaoJogo.cs
+    ├── EstadoJogo.cs
+    └── RegistroJogo.cs
+
+tests/JogoTextual.Tests/
+└── testes do estado, regras, histórico e persistência
+```
+
+As responsabilidades e relações entre essas classes estão explicadas em [Arquitetura atual](docs/arquitetura.md).
+
+## Ideia central
+
+O jogo não é apenas a sequência de textos mostrados no console. Ele é um sistema de estados, ações, regras e transições.
+
+```text
+estado atual
+→ apresentar ações
+→ receber uma escolha válida
+→ aplicar uma regra
+→ produzir consequências
+→ atualizar o estado
+→ verificar encerramento
+→ repetir
+```
+
+A interface atual é o console. Os grupos podem adaptar o domínio sem precisar introduzir interface gráfica ou motor de jogos.
+
+## O que deve ser adaptado
+
+Os exemplos `Progresso`, `Progredir` e `Aguardar` são demonstrativos. Eles não definem o gênero do projeto.
+
+Cada grupo deve revisar os dados do estado, as ações, regras, consequências, coleção, condição de encerramento, persistência e testes.
+
+Use [Guia de adaptação do projeto-base](docs/adaptacao-projeto.md) como roteiro.
+
+## Documentação
+
+A documentação publicada está disponível em:
+
+**https://m4rc3lo.github.io/jogo-textual/**
+
+Ela reúne os textos conceituais, diagramas Mermaid e a documentação de API gerada a partir dos comentários XML do código.
+
+Para gerar localmente:
 
 ```powershell
 dotnet tool restore
-```
-
-Depois gere o site estático:
-
-```powershell
 dotnet tool run docfx docfx.json
 ```
 
-Os arquivos resultantes são gravados em `_site/`. Para visualizar o site em um servidor local:
+O resultado é gravado em `_site/`.
+
+## Testes
+
+Os testes usam xUnit e devem ser executados sempre que o projeto for alterado:
 
 ```powershell
-dotnet tool run docfx docfx.json --serve
+dotnet test
 ```
 
-O site combina a documentação conceitual escrita em Markdown com a documentação da API C# gerada pelo DocFX.
+Ao adaptar o projeto, os testes existentes devem ser atualizados ou complementados para representar as novas regras.
 
-## Publicação da documentação
+## Uso de IA generativa
 
-O workflow `.github/workflows/pages.yml` é executado em todo `push` para `main` ou manualmente pela aba Actions. Antes de publicar, ele restaura as dependências, compila, executa os testes, restaura o DocFX e gera `_site/`.
+Ferramentas de IA generativa podem ser usadas como apoio, desde que o uso seja transparente e o grupo compreenda, revise e teste o que incorporar ao projeto.
 
-Somente o conteúdo de `_site/` é enviado como artefato para o GitHub Pages.
+Consulte [Uso de IA generativa no projeto](docs/uso-ia-generativa.md).
 
-Para a primeira publicação, o repositório deve estar configurado em **Settings → Pages → Build and deployment → Source → GitHub Actions**. Depois dessa configuração, novas alterações em `main` publicam automaticamente a documentação quando o workflow termina com sucesso.
+## Automação
 
-## Licença
+O repositório utiliza GitHub Actions em dois fluxos separados:
 
-Este projeto é disponibilizado sob a [Apache License 2.0](LICENSE). Consulte também o arquivo [NOTICE](NOTICE).
+- `.github/workflows/ci.yml`: restaura dependências, compila e executa os testes;
+- `.github/workflows/pages.yml`: valida o projeto, gera a documentação com DocFX e publica no GitHub Pages.
+
+## Compatibilidade
+
+O projeto tem como alvo `net9.0` para manter compatibilidade com o ambiente de laboratório da disciplina. O `global.json` permite roll-forward para SDKs posteriores, incluindo .NET 10.
+
+## Licença e citação
+
+O material é disponibilizado sob a [Apache License 2.0](LICENSE). Consulte também [NOTICE](NOTICE) e [CITATION.cff](CITATION.cff).
+
+O repositório é mantido como material didático. Não há compromisso de manutenção de contribuições externas; consulte [CONTRIBUTING.md](CONTRIBUTING.md).
