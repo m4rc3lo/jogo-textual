@@ -7,4 +7,6 @@ authors:
     given-names: "Marcelo"
 repository-code: "https://github.com/m4rc3lo/jogo-textual"
 url: "https://m4rc3lo.github.io/jogo-textual/"
+version: "1.0.0"
+date-released: "2026-10-17"
 license: "Apache-2.0"

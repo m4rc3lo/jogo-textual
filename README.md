@@ -2,6 +2,8 @@
 
 Projeto-base didático da disciplina de **Lógica de Programação** do curso de **Design de Games**.
 
+**Versão de referência para estudantes: `student-base-v1.0.0`.**
+
 O projeto apresenta um jogo textual em C#/.NET com estado, ações, regras, ciclo principal, coleção de objetos, persistência em JSON e testes automatizados. A implementação é propositalmente pequena: o objetivo é servir como base de estudo e adaptação, e não como um jogo completo.
 
 ## Para começar

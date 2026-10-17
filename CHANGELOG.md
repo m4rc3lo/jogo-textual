@@ -6,6 +6,10 @@ O formato segue os princípios do [Keep a Changelog](https://keepachangelog.com/
 
 ## [Não publicado]
 
+Nenhuma alteração registrada após a versão `student-base-v1.0.0`.
+
+## [1.0.0] - 2026-10-17
+
 ### Adicionado
 
 - solução .NET com aplicação Console e projeto de testes xUnit;
